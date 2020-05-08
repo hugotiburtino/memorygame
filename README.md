@@ -10,7 +10,7 @@
 ## Instructions
 
 A classical memory game
-* Aim: display all cards
+* Aim: To have all cards displayed
 * Basic rules:
   1. Choose two cards to be displayed
   2. If the two cards have the same symbol, they are kept displayed
