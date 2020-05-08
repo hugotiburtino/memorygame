@@ -3,7 +3,8 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [About the Program](#about_the_program)
+* [How to run](#how_to_run)
+* [About the project](#about_the_project)
 * [Credits](#credits)
 
 ## Instructions
