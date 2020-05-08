@@ -22,7 +22,12 @@ A classical memory game
   * Pressing the curly arrow restarts the game
 
 ## How to run
-Open index.html with your web browser.
+
+* Standalone: Open index.html with your web browser
+* Docker: 
+1. `docker build -t memorygame .` 
+2. `docker run -p 8000:80 memorygame`
+3. Open the web browser and insert `localhost:8000`
 
 ## About the project
 The program was a project to be done as part of the course "Become a front-end web developer" at Udacity.
