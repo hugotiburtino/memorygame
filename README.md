@@ -1,5 +1,7 @@
 # Memory Game
 
+[Play now](http://hugotiburtino-memorygame.s3-website.eu-central-1.amazonaws.com/)
+
 ## Table of Contents
 
 * [Instructions](#instructions)
