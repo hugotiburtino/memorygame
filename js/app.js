@@ -45,7 +45,7 @@ function startGame() {
     stopTimer();
     moveCounter = 0;
     moveCounterElement.textContent = moveCounter;
-    for(item of listOfOpenCards) {
+    for(let item of listOfOpenCards) {
         let cardClasses = item.classList;
         cardClasses.remove("open", "show", "match");
     }
@@ -84,23 +84,23 @@ function shuffle(array) {
 function shuffleTheDeck() { deck = shuffle(deck); } 
 
 /**
- * Loop through each card and create its HTML 
+ * Loop through each card and create its HTML
  *  and add each card's HTML to the page
- * 
+ *
  * @param {Array} cardplaces 
  * @param {Array} values 
  */
 function addCardToPage(cardplaces, values) {
-    for (index in cardplaces) {
+    for (let index in cardplaces) {
         cardplaces[index].childNodes[1].className = values[index];
-    } 
+    }
 }
 
 /*
- * Set up the event listener for a card 
+ * Set up the event listener for a card
  */
  function setUpEventListener(targets, functionToRun) {
-    for (trgt of targets) {
+    for (let trgt of targets) {
         trgt.addEventListener("click", functionToRun);
    }
  }
@@ -112,7 +112,6 @@ function makeMove() {
     incrementMoveCounter();
     this.removeEventListener("click", makeMove);
     displaySymbol(this);
-    console.log(this)
     addCardToListOfOpenCards(this);
     if (listOfOpenCards.length % 2 === 0) {
       checkMatch();
@@ -147,16 +146,16 @@ function checkMatch() {
     if (cardClicked1.childNodes[1].className ===
         cardClicked2.childNodes[1].className) {
             lockMatchedCards(cardClicked1, cardClicked2);
-    } 
+    }
     else {
         hideCards(cardClicked1, cardClicked2);
     }
 }
 
 /**
- * 
+ *
  * Lock the cards in the open position
- * 
+ *
  * @param {*} card1 
  * @param {*} card2 
  */
@@ -252,10 +251,10 @@ function stopTimer () {
 
 /**
  * Display the modal
- */ 
+ */
 function winnerModal() {
     stopTimer ();
-    for(item of allCards) {
+    for(let item of allCards) {
       item.removeEventListener("click", makeMove);
     }
     let modalElement = document.querySelector('.modal');
