@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Lint HTML') {
       steps {
-        sh 'npx html-validator --file=index.html'
+        sh 'html-validator --file=index.html'
       }
     }
     stage('Upload to AWS') {
