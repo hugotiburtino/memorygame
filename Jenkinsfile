@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Lint HTML') {
       steps {
-        sh 'html-validator --file=index.html'
+        sh 'tidy -e -q --drop-empty-elements false index.html'
       }
     }
     stage('Upload to AWS') {
