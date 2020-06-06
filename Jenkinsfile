@@ -1,9 +1,17 @@
 pipeline {
   agent any
   stages {
+    stage('Install dev dependencies') {
+      sh 'npm install'
+    }
     stage('Lint HTML') {
       steps {
-        sh 'tidy -e -q --drop-empty-elements false index.html'
+        sh 'npx html-validate index.html'
+      }
+    }
+    stage('Lint JS') {
+      steps {
+        sh 'npx eslint js/app.js'
       }
     }
     stage('Upload to AWS') {
@@ -14,6 +22,11 @@ pipeline {
           s3Upload(file:'js', bucket:'hugotiburtino-memorygame', path:'js')
           s3Upload(file:'index.html', bucket:'hugotiburtino-memorygame', path:'index.html')
         }
+      }
+    }
+    stage('Clean') {
+      steps {
+        sh 'rm -rf node_modules'
       }
     }
   }
