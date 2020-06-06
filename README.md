@@ -1,6 +1,6 @@
 # Memory Game
 
-[Play now](http://hugotiburtino-memorygame.s3-website.eu-central-1.amazonaws.com/)
+[PLAY NOW!](http://hugotiburtino-memorygame.s3-website.eu-central-1.amazonaws.com/)
 
 ## Table of Contents
 
@@ -8,21 +8,6 @@
 * [How to run](#how_to_run)
 * [About the project](#about_the_project)
 * [Credits](#credits)
-
-## Instructions
-
-A classical memory game
-* Aim: To have all cards displayed
-* Basic rules:
-  1. Choose two cards to be displayed
-  2. If the two cards have the same symbol, they are kept displayed
-  3. If the two cards do not match, they should be flipped down
-* Other rules:
-  * Every time two cards are flipped, one move is counted
-  * After 16 moves, one of three starts gets empty, down to 1
-  * A timer is running
-  * When all cards are displayed you can see your performance
-  * Pressing the curly arrow restarts the game
 
 ## How to run
 
