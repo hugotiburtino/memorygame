@@ -87,8 +87,8 @@ function shuffleTheDeck() { deck = shuffle(deck); }
  * Loop through each card and create its HTML
  *  and add each card's HTML to the page
  *
- * @param {Array} cardplaces 
- * @param {Array} values 
+ * @param {array of HTMLLIElements} cardplaces 
+ * @param {array of strings} values 
  */
 function addCardToPage(cardplaces, values) {
     for (let index in cardplaces) {
@@ -121,7 +121,7 @@ function makeMove() {
 /**
  * Display the card symbol
  * 
- * @param {*} clickedCard 
+ * @param {HTMLLIElement} clickedCard 
  */
 function displaySymbol(clickedCard) {
     let cardClasses = clickedCard.classList;
@@ -131,7 +131,7 @@ function displaySymbol(clickedCard) {
 /**
  * Add the card to a array of "open" cards
  * 
- * @param {*} displayedCard 
+ * @param {HTMLLIElement} displayedCard 
  */
 function addCardToListOfOpenCards (displayedCard) {
     listOfOpenCards.push(displayedCard);
@@ -156,8 +156,8 @@ function checkMatch() {
  *
  * Lock the cards in the open position
  *
- * @param {*} card1 
- * @param {*} card2 
+ * @param {HTMLLIElement} card1 
+ * @param {HTMLLIElement} card2 
  */
 function lockMatchedCards(card1, card2) {
     let cardClasses1 = card1.classList;
@@ -174,8 +174,8 @@ function lockMatchedCards(card1, card2) {
  * 
  * Remove the cards from the list and hide the card's symbol
  * 
- * @param {*} card1 
- * @param {*} card2 
+ * @param {HTMLLIElement} card1 
+ * @param {HTMLLIElement} card2 
  */
 function hideCards (card1, card2) {
     
@@ -198,13 +198,13 @@ function hideCards (card1, card2) {
  */
 function checkIfWon() {
     if (listOfOpenCards.length === 16) {
-      winnerModal()
+      displayWinnerModal()
     }
 }
 
 /**
  * Increment the move counter and display it on the page
- * Also, informs the counter when the game started and 
+ * Also inform the counter when the game started and 
  * when to remove one star 
  */
 function incrementMoveCounter () {
@@ -225,7 +225,7 @@ function incrementMoveCounter () {
 
 /**
  * Remove one star
- * @param {Number} index 
+ * @param {number} index 
  */
 function removeStar(index) {
     let starClass = allstars[index].classList;
@@ -252,21 +252,21 @@ function stopTimer () {
 /**
  * Display the modal
  */
-function winnerModal() {
+function displayWinnerModal() {
     stopTimer ();
     for(let item of allCards) {
       item.removeEventListener("click", makeMove);
     }
     let modalElement = document.querySelector('.modal');
-    getModalText(modalElement);
+    setModalText(modalElement);
     modalElement.style.display = 'block';
 }
 
 /**
  * Get information for the modal
- * @param {*} element 
+ * @param {HTMLDivElement} element 
  */
-function getModalText(element) {
+function setModalText(element) {
     let fullStars = document.getElementsByClassName('fa-star');
     let modalText = `<h2>CONGRATULATIONS</h2>
       Stars: ${fullStars.length}<br>
@@ -282,7 +282,7 @@ function getModalText(element) {
  */
 function closeModal() {
     let modalElement = document.querySelector('.modal');
-    getModalText(modalElement);
+    setModalText(modalElement);
     modalElement.style.display = 'none';
 }
 
