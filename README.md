@@ -4,7 +4,6 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
 * [How to run](#how_to_run)
 * [About the project](#about_the_project)
 * [Credits](#credits)
