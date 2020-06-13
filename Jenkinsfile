@@ -2,7 +2,9 @@ pipeline {
   agent any
   stages {
     stage('Install dev dependencies') {
-      sh 'npm install'
+      steps {
+        sh 'npm install'
+      }
     }
     stage('Lint HTML') {
       steps {
