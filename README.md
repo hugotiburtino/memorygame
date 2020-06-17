@@ -25,3 +25,5 @@ A starter code of the HTML and CSS files was provided as well as a very short Ja
 The JavaScript code was developed by Hugo Tiburtino.
 The most of the CSS and the HTML codes was provided by Udacity.
 I would like to thank you Eman Mohammed A. for valuable tips on the code
+Favicon by Freepik at [flaticon](https://www.flaticon.com/authors/freepik)
+Background image by [Francesco Ungaro](https://www.pexels.com/@francesco-ungaro) at Pexels
